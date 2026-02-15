@@ -1,0 +1,36 @@
+# .gitignore
+
+# 日志文件
+logs/
+*.log
+
+# 备份文件
+*.backup
+*.backup.*
+*.old
+
+# 临时文件
+*.tmp
+*.temp
+*~
+
+# 敏感配置文件
+config/myserver*.conf
+config/private*.conf
+config/prod*.conf
+!config/production.conf.example
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# IDE 文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# 测试文件
+test_*.sh
+*.test

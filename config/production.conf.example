@@ -1,0 +1,46 @@
+# 生产环境配置示例
+# 此配置适用于生产环境的 VPS 部署
+
+VPS_USER="deploy"
+VPS_HOSTNAME="prod-server-01"
+
+# 重要：请填写你的 SSH 公钥
+SSH_PUBKEY="ssh-ed25519 AAAA...your-public-key-here... user@hostname"
+SSH_PORT="22"
+SSH_CHANGE_PORT="yes"  # 建议修改 SSH 端口
+SSH_DISABLE_ROOT="yes"
+SSH_DISABLE_PASSWORD="yes"
+
+# 需要开放的端口（根据应用需求）
+FIREWALL_EXTRA_PORTS="80,443"
+
+# 严格的 Fail2ban 设置
+F2B_MAXRETRY="3"
+F2B_FINDTIME="10m"
+F2B_BANTIME="24h"
+
+TIMEZONE="Asia/Hong_Kong"
+
+# 生产环境建议创建 swap
+SWAP_CREATE="yes"
+SWAP_SIZE="2G"
+SWAP_SWAPPINESS="10"
+SWAP_CACHE_PRESSURE="50"
+
+# 启用所有安全模块
+ENABLE_USER_SETUP="yes"
+ENABLE_HOSTNAME_SETUP="yes"
+ENABLE_PACKAGE_INSTALL="yes"
+ENABLE_SSH_HARDENING="yes"
+ENABLE_FIREWALL="yes"
+ENABLE_FAIL2BAN="yes"
+ENABLE_TIMEZONE="yes"
+ENABLE_APT_OPTIMIZATION="yes"
+ENABLE_SWAP="yes"
+ENABLE_BBR="yes"
+
+# 非交互模式（自动化部署）
+INTERACTIVE_MODE="no"
+VERBOSE="yes"
+CREATE_REPORT="yes"
+REPORT_PATH="/root/vps_init_report_$(date +%Y%m%d).txt"

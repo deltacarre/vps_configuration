@@ -1,0 +1,10 @@
+# Managed by VPS Configuration Script
+
+[sshd]
+enabled = true
+port = {{ SSH_PORT }}
+backend = systemd
+banaction = ufw
+maxretry = {{ F2B_MAXRETRY }}
+findtime = {{ F2B_FINDTIME }}
+bantime = {{ F2B_BANTIME }}
