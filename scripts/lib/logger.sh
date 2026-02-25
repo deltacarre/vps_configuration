@@ -11,15 +11,15 @@ readonly COLOR_CYAN='\033[0;36m'
 
 # 日志级别
 log_info() {
-    echo -e "${COLOR_BLUE}[INFO]${COLOR_RESET} $*"
+    echo -e "${COLOR_BLUE}[INFO]${COLOR_RESET} $*" >&2
 }
 
 log_success() {
-    echo -e "${COLOR_GREEN}[SUCCESS]${COLOR_RESET} $*"
+    echo -e "${COLOR_GREEN}[SUCCESS]${COLOR_RESET} $*" >&2
 }
 
 log_warn() {
-    echo -e "${COLOR_YELLOW}[WARN]${COLOR_RESET} $*"
+    echo -e "${COLOR_YELLOW}[WARN]${COLOR_RESET} $*" >&2
 }
 
 log_error() {
@@ -27,11 +27,11 @@ log_error() {
 }
 
 log_step() {
-    echo -e "\n${COLOR_CYAN}==>${COLOR_RESET} ${COLOR_CYAN}$*${COLOR_RESET}\n"
+    echo -e "\n${COLOR_CYAN}==>${COLOR_RESET} ${COLOR_CYAN}$*${COLOR_RESET}\n" >&2
 }
 
 log_section() {
-    echo -e "\n${COLOR_GREEN}=====================================${COLOR_RESET}"
-    echo -e "${COLOR_GREEN}$*${COLOR_RESET}"
-    echo -e "${COLOR_GREEN}=====================================${COLOR_RESET}\n"
+    echo -e "\n${COLOR_GREEN}=====================================${COLOR_RESET}" >&2
+    echo -e "${COLOR_GREEN}$*${COLOR_RESET}" >&2
+    echo -e "${COLOR_GREEN}=====================================${COLOR_RESET}\n" >&2
 }
